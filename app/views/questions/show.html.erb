@@ -1,0 +1,27 @@
+<h1>Show</h1>
+<p>
+  Title: <br />
+  <%= @question.title %>
+</p>
+<p>
+  Name: <br />
+  <%= @question.name %>
+</p>
+<p>
+  Content: <br />
+  <%= @question.content %>
+</p>
+
+<h2>Answers</h2>
+<% @question.answers.each do |answer| %>
+<p>Name: <%= answer.name %></p>
+<p>Content: <%= answer.content %></p>
+<%= link_to "Destroy answer", [answer.question, answer], data: { turbo_method:
+"delete", turbo_confirm: "Are you sure?" } %> <% end %>
+
+<h2>Add an answer</h2>
+<%= form_with model: [@question, @question.answers.build] do |form| %>
+<p><%= form.label :name %> <%= form.text_field :name %></p>
+<p><%= form.label :content %> <%= form.text_area :content %></p>
+<div><%= form.submit %></div>
+<% end %> <%= link_to "top", questions_path %>

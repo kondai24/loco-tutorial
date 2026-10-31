@@ -1,0 +1,23 @@
+<h1>Questions</h1>
+<%= link_to "new", new_question_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Name</th>
+    <th>Content</th>
+    <th></th>
+  </tr>
+  <% @questions.each do |question| %>
+  <tr>
+    <td><%= question.title %></td>
+    <td><%= question.name %></td>
+    <td><%= question.content %></td>
+    <td><%= link_to 'Show', question_path(question) %></td>
+    <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    <td>
+      <%= link_to 'Destroy', question_path(question), data: { turbo_method:
+      "delete", turbo_confirm: "Are you sure?" } %>
+    </td>
+    <% end %>
+  </tr>
+</table>
