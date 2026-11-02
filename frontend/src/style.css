@@ -1,0 +1,6 @@
+/* Keep the original Rails page's browser-default appearance. */
+.link { background: none; border: none; color: #0000ee; text-decoration: underline; padding: 0; cursor: pointer; font: inherit; }
+.link:disabled { color: #666; cursor: wait; }
+[role="alert"] { color: #b00020; }
+td { overflow-wrap: anywhere; max-width: 36rem; }
+main { overflow-x: auto; }
