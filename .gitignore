@@ -34,3 +34,11 @@
 /config/master.key
 
 .DS_Store
+# Loco / React local artifacts
+/backend/target/
+/backend/*.sqlite*
+/frontend/node_modules/
+/frontend/dist/
+/frontend/*.tsbuildinfo
+/frontend/test-results/
+/frontend/playwright-report/
